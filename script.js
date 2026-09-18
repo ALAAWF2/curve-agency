@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_contact: "CONTACT",
       nav_cta: "LET'S TALK",
 
-      hero_badge: "FULL-SERVICE CREATIVE AGENCY",
+      hero_badge: "FULL-SERVICE AGENCY",
       hero_title_1: "IGNITE",
       hero_title_2: "THE MOTION.",
       hero_lead: "Curve is a full-service creative agency dedicated to delivering innovative, motion-driven solutions. We specialize in brand identity, digital design, content creation, and media production — helping businesses move forward with clarity, momentum, and impact.",
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_contact: "تواصل معنا",
       nav_cta: "تحدث معنا",
 
-      hero_badge: "وكالة إبداعية متكاملة",
+      hero_badge: "وكالة متكاملة",
       hero_title_1: "نُطلق",
       hero_title_2: "أثر الحركة.",
       hero_lead: "كيرف هي وكالة إبداعية متكاملة متخصصة في تقديم حلول مبتكرة مدفوعة بالحركة. نبتكر الهويات البصرية، والتصميم الرقمي، وصناعة المحتوى، والإنتاج الإعلامي — لنقود العلامات التجارية نحو الأمام بوضوح، وزخم، وأثر استثنائي.",
