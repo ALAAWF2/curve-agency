@@ -534,7 +534,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // ── إظهار / إخفاء اللغة العربية ──────────────────────────────────────────
+  // ARABIC_ENABLED = false  →  يُخفى زر اللغة (EN/عربي) ويُثبَّت الموقع على الإنجليزية
+  // ARABIC_ENABLED = true   →  يرجع الزر والعربي فوراً بالضغط عليه
+  // ملاحظة: كل الترجمات العربية موجودة كما هي في translations.ar — ما انحذف شي.
+  const ARABIC_ENABLED = false;
+
   let currentLang = localStorage.getItem('curve_lang') || 'en';
+
+  if (!ARABIC_ENABLED) {
+    currentLang = 'en';
+    const _hideLangToggle = () => {
+      const _btn = document.getElementById('lang-toggle');
+      if (_btn) _btn.style.display = 'none';
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', _hideLangToggle);
+    } else {
+      _hideLangToggle();
+    }
+  }
 
   function applyLanguage(lang) {
     currentLang = lang;
