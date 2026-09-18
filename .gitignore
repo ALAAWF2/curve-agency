@@ -1,0 +1,26 @@
+# ملفات لا تُرفع — النسخة الأصلية الثقيلة والأصول المرجعية غير المستعملة بالموقع
+assets/photos/
+assets/pdf-pages/
+
+# لقطات المراجعة (ثقيلة)
+site_screenshots/
+reference_screenshots/
+
+# سجلات ومخرجات وكيل البناء
+agy_run.log
+agy_build_out.txt
+agy_out.txt
+old_logs/
+
+# سكربتات مساعدة محلية
+capture_audit.py
+capture_sections.py
+cdp_helper.py
+dump_log.py
+TASK_AGY_SITE.md
+
+# عموم
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
