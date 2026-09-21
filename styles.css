@@ -2026,29 +2026,3 @@ html[dir="rtl"] .work-badge {
   font-style: normal;
   font-display: swap;
 }
-
-
-/* --- FEATURED CARD (variant D, approved by Alaa 21 Sep 2026) ---------------
-   The featured service is expressed by inversion (white card + black type) AND
-   carries the brand's own geometric pattern ghosted inside it, so the treatment
-   reads as deliberate rather than accidental — no hue is used anywhere. */
-.service-card.featured-service {
-  position: relative;
-  overflow: hidden;
-}
-.service-card.featured-service::after {
-  content: "";
-  position: absolute;
-  inset: -35%;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url(assets/curve-pattern-dark.svg);
-  background-size: 96px 96px;
-  background-repeat: repeat;
-  opacity: 0.13;   /* measured against the pixel data: 0.085 read as flat white */
-  transform: rotate(45deg);
-}
-.service-card.featured-service > * {
-  position: relative;
-  z-index: 1;
-}
