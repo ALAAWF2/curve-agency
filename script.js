@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const translations = {
     en: {
       nav_location: "EST. JEDDAH",
-      nav_about: "ABOUT",
+      nav_about: "PROFILE",
       nav_services: "SERVICES",
       nav_process: "PROCESS",
       nav_why: "WHY CURVE",
       nav_stats: "IMPACT",
-      nav_work: "SELECTED WORK",
+      nav_work: "WORK",
       nav_partners: "CLIENTS",
       nav_contact: "CONTACT",
       nav_cta: "LET'S TALK",
