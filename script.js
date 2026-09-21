@@ -641,13 +641,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const langToggleBtn = document.getElementById('lang-toggle');
   if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
+      if (!ARABIC_ENABLED) return;   // hard guard — Arabic stays parked, even if the button is forced visible
       const nextLang = currentLang === 'en' ? 'ar' : 'en';
       applyLanguage(nextLang);
     });
   }
 
-  // Initialize language
-  applyLanguage(currentLang);
+  // Initialize language (forced to English whenever Arabic is parked)
+  applyLanguage(ARABIC_ENABLED ? currentLang : 'en');
 
   /* ==========================================================================
      2. STICKY HEADER & SCROLL BEHAVIOR

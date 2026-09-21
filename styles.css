@@ -2212,3 +2212,18 @@ html[dir="rtl"] .work-badge {
 a, a:visited { color: inherit; }
 .brand-logo, .brand-logo:visited { color: var(--text-pure); }
 .site-footer a, .site-footer a:visited { color: inherit; }
+
+
+/* --- measured against the live reference (SIFR_DESIGN_NOTES + MEASURED_SPEC) ---
+   reference viewport 1905px: content margin 193px (10.13vw) · hero cap 163px =>
+   font 223-233px (11.7-12.2vw) · hero leading 190.5px (0.82-0.85) · stagger 18px */
+:root { --container-pad: clamp(1.5rem, 10.1vw, 12.6rem); }
+.hero-title { font-size: clamp(3.6rem, 11.9vw, 13.6rem); line-height: 0.85; }
+.work-filters {
+  width: 100%;
+  border-bottom: 1px solid var(--border-dim);
+  padding-bottom: clamp(0.75rem, 1.2vw, 1.25rem);
+}
+@media (min-width: 900px) {
+  .work-grid > .work-card:nth-child(even) { margin-top: clamp(0.75rem, 1vw, 1.25rem); }  /* reference: 18px */
+}

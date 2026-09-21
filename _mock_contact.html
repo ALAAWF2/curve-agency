@@ -714,6 +714,10 @@
         window.__mockFill();
         document.getElementById('ci-message').focus();
         form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        // the handler resets the form on success — re-apply the demo content so the
+        // captured state shows a completed inquiry alongside the confirmation
+        window.__mockFill();
+        document.getElementById('ci-message').focus();
       };
       window.__mockErrorStates = function () {
         document.getElementById('ci-name').value = '';
