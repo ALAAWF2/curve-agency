@@ -2037,7 +2037,7 @@ html[dir="rtl"] .work-badge {
   overflow: hidden;
 }
 .service-card.featured-service::after {
-  content: ;
+  content: "";
   position: absolute;
   inset: -35%;
   z-index: 0;
@@ -2045,7 +2045,7 @@ html[dir="rtl"] .work-badge {
   background-image: url(assets/curve-pattern-dark.svg);
   background-size: 96px 96px;
   background-repeat: repeat;
-  opacity: 0.085;
+  opacity: 0.13;   /* measured against the pixel data: 0.085 read as flat white */
   transform: rotate(45deg);
 }
 .service-card.featured-service > * {
