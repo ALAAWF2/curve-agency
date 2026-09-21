@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <!-- one blade: straight edges + concave quarter arc of radius 22 -->
+    <path id="blade" d="M0 0 L22 0 A22 22 0 0 0 0 22 Z" fill="#FFFFFF"/>
+    <path id="petal" d="M0 0 L22 0 A22 22 0 0 0 0 22 Z" fill="#FFFFFF"/>
+    <g id="rosette">
+      <use href="#blade"/>
+      <use href="#blade" transform="rotate(90)"/>
+      <use href="#blade" transform="rotate(180)"/>
+      <use href="#blade" transform="rotate(270)"/>
+    </g>
+    <g id="petal4">
+      <use href="#petal"/>
+      <use href="#petal" transform="rotate(45)"/>
+      <use href="#petal" transform="rotate(90)"/>
+      <use href="#petal" transform="rotate(135)"/>
+      <use href="#petal" transform="rotate(180)"/>
+      <use href="#petal" transform="rotate(225)"/>
+      <use href="#petal" transform="rotate(270)"/>
+      <use href="#petal" transform="rotate(315)"/>
+    </g>
+    <!-- spandrel: square corner block minus its inscribed quarter disc -->
+    <path id="spandrel" d="M0 0 L22 0 A22 22 0 0 1 0 22 Z" fill="#FFFFFF"/>
+  </defs>
+  <g>
+    <!-- centre rosette -->
+    <use href="#rosette" x="44.0" y="44.0" transform="translate(44.0,44.0) translate(-22,-22)"/>
+    <!-- corner markers (half-rosettes at the 4 corners keep the tile seamless) -->
+    <use href="#rosette" transform="translate(0,0) translate(-22,-22)"/>
+    <use href="#rosette" transform="translate(88,0) translate(-22,-22)"/>
+    <use href="#rosette" transform="translate(0,88) translate(-22,-22)"/>
+    <use href="#rosette" transform="translate(88,88) translate(-22,-22)"/>
+    <!-- edge hooks: mirrored pairs, point-symmetric about the edge midpoint -->
+    <g transform="translate(44.0,0)">
+      <use href="#spandrel" transform="rotate(180) translate(-11.0,0)"/>
+    </g>
+    <g transform="translate(0,44.0)">
+      <use href="#spandrel" transform="translate(0,-11.0)"/>
+    </g>
+    <!-- interstitial 4-petal pinwheel, rotated 45 deg -->
+    <use href="#petal4" transform="translate(44.0,44.0) translate(-16.5,-16.5) scale(0.75)"/>
+  </g>
+</svg>

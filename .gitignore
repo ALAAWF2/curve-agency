@@ -24,3 +24,12 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# working files (not for the public repo)
+_bak_*.css
+_bak_*.html
+_cap_*.log
+_guideline_pages/
+brand_check/
+_guideline_text.txt
+__pycache__/

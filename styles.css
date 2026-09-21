@@ -5,29 +5,33 @@
    ========================================================================== */
 
 :root {
-  /* Colors */
-  --bg-dark: #08080a;
-  --bg-surface: #111115;
-  --bg-card: #15151b;
-  --bg-card-hover: #1c1c24;
-  --border-dim: rgba(255, 255, 255, 0.07);
-  --border-light: rgba(255, 255, 255, 0.15);
-  --border-hover: rgba(255, 255, 255, 0.35);
-  
+  /* Colors — CURVE BRAND GUIDELINE: black #000000 + white + black/white opacity tints only.
+     No chromatic accent is approved anywhere in the visual identity. */
+  --bg-dark: #000000;
+  --bg-surface: rgba(255, 255, 255, 0.04);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.085);
+  --border-dim: rgba(255, 255, 255, 0.10);
+  --border-light: rgba(255, 255, 255, 0.20);
+  --border-hover: rgba(255, 255, 255, 0.45);
+
+  --paper: #eceaea;            /* approved light ground */
+  --ink: #000000;              /* approved ink */
   --text-pure: #ffffff;
-  --text-primary: #f2f2f4;
-  --text-muted: #8e8e98;
-  --text-dim: #5a5a64;
+  --text-primary: rgba(255, 255, 255, 0.90);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-dim: rgba(255, 255, 255, 0.32);
 
-  --accent: #ff3b30;
-  --accent-glow: rgba(255, 59, 48, 0.25);
-  --accent-hover: #ff5547;
+  /* the "accent" role is filled by pure black / pure white contrast — not a hue */
+  --accent: #ffffff;
+  --accent-glow: rgba(255, 255, 255, 0.14);
+  --accent-hover: rgba(255, 255, 255, 0.86);
 
-  /* Typography */
-  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-arabic-display: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  --font-arabic-sans: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+  /* Typography — guideline: Latin = Poppins (7 weights) · Arabic = RB family */
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic-display: 'RB', 'Cairo', 'Poppins', sans-serif;
+  --font-arabic-sans: 'RB', 'Cairo', 'Poppins', sans-serif;
 
   /* Spacing */
   --container-max: 1400px;
@@ -100,7 +104,7 @@ html[dir="rtl"] .btn-arrow {
   transform: translateX(-50%);
   width: 90vw;
   height: 60vh;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 59, 48, 0.04) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 75%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 75%);
   pointer-events: none;
   z-index: 0;
 }
@@ -183,7 +187,7 @@ html[dir="rtl"] .btn-arrow {
 }
 
 .site-header.scrolled {
-  background-color: rgba(8, 8, 10, 0.88);
+  background-color: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 0.85rem 0;
@@ -351,7 +355,6 @@ html[dir="rtl"] .brand-location {
   background-color: var(--accent);
   border-color: var(--accent);
   color: #ffffff;
-  box-shadow: 0 4px 25px var(--accent-glow);
 }
 
 .btn-ghost {
@@ -517,8 +520,8 @@ html[dir="rtl"] .brand-location {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(8, 8, 10, 0.4) 0%, rgba(8, 8, 10, 0.8) 70%, var(--bg-dark) 100%),
-              radial-gradient(circle at 10% 50%, rgba(8, 8, 10, 0.9) 0%, transparent 60%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.80) 70%, var(--bg-dark) 100%),
+              radial-gradient(circle at 10% 50%, rgba(0, 0, 0, 0.90) 0%, transparent 60%);
 }
 
 .hero-content {
@@ -551,7 +554,6 @@ html[dir="rtl"] .brand-location {
   height: 6px;
   border-radius: 50%;
   background-color: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
   animation: pulse 2s infinite;
 }
 
@@ -746,7 +748,6 @@ html[dir="rtl"] .brand-location {
 
 .pill-dot.pill-accent {
   background-color: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
 }
 
 .pill-label {
@@ -799,8 +800,8 @@ html[dir="rtl"] .brand-location {
 }
 
 .service-card.featured-service {
-  background: linear-gradient(145deg, var(--bg-surface) 0%, rgba(255, 59, 48, 0.06) 100%);
-  border-color: rgba(255, 59, 48, 0.25);
+  background: #ffffff;
+  border-color: #ffffff;
 }
 
 .service-top {
@@ -834,7 +835,7 @@ html[dir="rtl"] .brand-location {
 }
 
 .service-tag-badge.highlight {
-  background: rgba(255, 59, 48, 0.15);
+  background: rgba(255, 255, 255, 0.14);
   color: var(--accent);
 }
 
@@ -1041,7 +1042,7 @@ html[dir="rtl"] .why-card:hover {
 }
 
 .why-card:hover .why-card-icon {
-  background: rgba(255, 59, 48, 0.15);
+  background: rgba(255, 255, 255, 0.14);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -1102,7 +1103,7 @@ html[dir="rtl"] .why-card:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 30%, rgba(3, 3, 4, 0.6) 0%, rgba(3, 3, 4, 0.95) 85%);
+  background: radial-gradient(circle at 50% 30%, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.95) 85%);
 }
 
 .stats-inner {
@@ -1133,9 +1134,7 @@ html[dir="rtl"] .why-card:hover {
 }
 
 .stat-card {
-  background: rgba(17, 17, 21, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-dim);
   border-radius: var(--radius-md);
   padding: clamp(1.75rem, 3vw, 2.75rem) 1.5rem;
@@ -1197,7 +1196,7 @@ html[dir="rtl"] .why-card:hover {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 59, 48, 0.12);
+  background: rgba(255, 255, 255, 0.10);
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
   white-space: nowrap;
@@ -1297,9 +1296,7 @@ html[dir="rtl"] .why-card:hover {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(8, 8, 10, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-pure);
   font-size: 0.65rem;
@@ -1389,7 +1386,7 @@ html[dir="rtl"] .work-badge {
 }
 
 .partners-banner {
-  background: linear-gradient(135deg, var(--bg-surface) 0%, #15151e 100%);
+  background: var(--bg-surface);
   border: 1px solid var(--border-dim);
   border-radius: var(--radius-md);
   padding: clamp(2.5rem, 5vw, 3.5rem);
@@ -1662,9 +1659,9 @@ html[dir="rtl"] .work-badge {
 
 .form-status-box.success {
   display: block;
-  background: rgba(46, 204, 113, 0.1);
-  border: 1px solid rgba(46, 204, 113, 0.3);
-  color: #2ecc71;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -1909,4 +1906,71 @@ html[dir="rtl"] .work-badge {
   .form-container {
     padding: 1.5rem 1.2rem;
   }
+}
+
+
+/* ==========================================================================
+   BRAND GUIDELINE COMPLIANCE — CURVE BRAND GUIDELINE (27 pages)
+   · COLOR  : #000000 + white + black/white opacity tints only — no hue anywhere
+   · TYPE   : Poppins (Latin, 7 weights) · RB family (Arabic) with Cairo fallback
+   · PATTERN: rosette / double-hook / spandrel / 4-petal on a 45deg square lattice,
+              arcs of one radius, solid fills, constant-weight channels
+   · FLAT   : solid surfaces, hairline rules, no glow, no sheen gradient
+   ========================================================================== */
+
+/* --- PATTERN & ELEMENTS (the identity's signature device) ------------------ */
+.brand-pattern {
+  position: absolute;
+  inset: -30%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("assets/curve-pattern.svg");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  opacity: 0.055;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.brand-band {
+  height: clamp(52px, 7vw, 84px);
+  background-color: var(--bg-dark);
+  background-image: url("assets/curve-pattern.svg");
+  background-size: 68px 68px;
+  background-repeat: repeat;
+  border-top: 1px solid var(--border-dim);
+  border-bottom: 1px solid var(--border-dim);
+  opacity: 0.85;
+}
+
+.brand-band.invert {
+  background-color: var(--paper);
+  background-image: url("assets/curve-pattern-dark.svg");
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* --- LOGO USAGE ----------------------------------------------------------- */
+/* min web size 120 x 29.873 px · aspect preserved · no frame · clear space >= 1X */
+.brand-logo { padding: 0.25rem 0; }
+.logo-img { min-width: 120px; }
+.footer-logo { width: 130px; height: auto; }
+
+/* --- FEATURED STATE: emphasis by inversion, not by a hue ------------------ */
+.service-card.featured-service,
+.service-card.featured-service:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+.service-card.featured-service .service-title,
+.service-card.featured-service .service-num { color: #000000; }
+.service-card.featured-service .service-sub { color: rgba(0, 0, 0, 0.66); }
+.service-card.featured-service .service-body { color: rgba(0, 0, 0, 0.68); }
+.service-card.featured-service .service-items { border-top-color: rgba(0, 0, 0, 0.15); }
+.service-card.featured-service .service-items li { color: rgba(0, 0, 0, 0.70); }
+.service-card.featured-service .service-items li::before { color: #000000; }
+.service-card.featured-service .service-tag-badge,
+.service-card.featured-service .service-tag-badge.highlight {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #000000;
 }
