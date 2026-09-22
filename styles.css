@@ -2448,3 +2448,51 @@ a, a:visited { color: inherit; }
 .site-header .nav-cta { border-color: rgba(255, 255, 255, 0.5); color: #FFFFFF; }
 .site-header .nav-cta:hover { background-color: #FFFFFF; border-color: #FFFFFF; color: #000000; }
 .site-header .hamburger-bar { background-color: #FFFFFF; }
+
+/* ==========================================================================
+   HOVER LANGUAGE: movement only — never a colour or fill change.
+   Alaa, 22 Sep 2026: "مابدي هون يصير ابيض … مابدي يصير اللون غامق لما مرر الماوس".
+   Hovering lifts the element and adds a soft shadow; every surface keeps its
+   resting background, border and text colour, so nothing turns white and nothing
+   darkens under the pointer.
+   ========================================================================== */
+.service-card:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--border-dim);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+.why-card:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--border-dim);
+  transform: translateX(4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+html[dir="rtl"] .why-card:hover { transform: translateX(-4px); }
+.why-card:hover .why-card-icon {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: var(--border-dim);
+  color: var(--text-pure);
+}
+.btn-primary:hover {
+  background-color: var(--text-pure);
+  border-color: var(--text-pure);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.20);
+}
+.btn-ghost:hover {
+  background-color: transparent;
+  border-color: var(--border-light);
+  color: var(--text-pure);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+}
+.btn-outline:hover {
+  background-color: transparent;
+  border-color: var(--border-dim);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+}
+.partner-cell:hover { background-color: #EDEDED; }   /* the logo wall keeps its ground */
