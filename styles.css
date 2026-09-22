@@ -249,7 +249,7 @@ html[dir="rtl"] .brand-location {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--text-pure);          /* header nav reads black (Alaa, 22 Sep 2026) */
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
@@ -799,10 +799,8 @@ html[dir="rtl"] .brand-location {
   transform: translateY(-4px);
 }
 
-.service-card.featured-service {
-  background: #ffffff;
-  border-color: #ffffff;
-}
+/* all six capability cards are identical — no card is singled out
+   (Alaa, 22 Sep 2026: "خلين كلن نفس اللون ماتميزلي وحدة"). */
 
 .service-top {
   display: flex;
@@ -832,11 +830,6 @@ html[dir="rtl"] .brand-location {
   border-radius: var(--radius-full);
   background: rgba(0, 0, 0, 0.04);
   color: var(--text-muted);
-}
-
-.service-tag-badge.highlight {
-  background: rgba(0, 0, 0, 0.16);
-  color: var(--accent);
 }
 
 .service-title {
@@ -1955,44 +1948,19 @@ html[dir="rtl"] .work-badge {
 .logo-img { min-width: 120px; }
 .footer-logo { width: 130px; height: auto; }
 
-/* --- FEATURED STATE: emphasis by inversion, not by a hue ------------------ */
-.service-card.featured-service,
-.service-card.featured-service:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-}
-.service-card.featured-service .service-title,
-.service-card.featured-service .service-num { color: #000000; }
-.service-card.featured-service .service-sub { color: rgba(0, 0, 0, 0.66); }
-.service-card.featured-service .service-body { color: var(--text-muted); }   /* same grey as every other card */
-.service-card.featured-service .service-items { border-top-color: rgba(0, 0, 0, 0.15); }
-.service-card.featured-service .service-items li { color: rgba(0, 0, 0, 0.70); }
-.service-card.featured-service .service-items li::before { color: #000000; }
-.service-card.featured-service .service-tag-badge,
-.service-card.featured-service .service-tag-badge.highlight {
-  background: rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.18);
-  color: #000000;
-}
+/* --- FEATURED STATE: removed — all six capability cards share one treatment -- */
 
 
 /* --- BRAND IMAGERY: achromatic, motion-led (guideline p.16) ---------------- */
-/* brand photography is rendered achromatic everywhere; the portfolio keeps its
-   colour available on hover so the client's own work still reads at full impact */
+/* brand photography stays achromatic; the portfolio shows the client's own work
+   in full colour at all times — no hover dependency (Alaa, 22 Sep 2026). */
 .hero-bg-img { filter: grayscale(1) contrast(1.1) brightness(0.9); }
 .about-img { filter: grayscale(1) contrast(1.05); }
 .stats-bg-img { filter: grayscale(1) contrast(1.2); }
 
 .work-img {
-  filter: grayscale(1) contrast(1.04);
-  transition: filter 0.45s var(--ease-out), transform 0.8s var(--ease-out);
-}
-.work-card:hover .work-img,
-.work-card:focus-within .work-img {
-  filter: grayscale(0) contrast(1);
-}
-@media (hover: none) {
-  .work-card:hover .work-img { filter: grayscale(1) contrast(1.04); }
+  filter: none;
+  transition: transform 0.8s var(--ease-out);
 }
 
 /* --- TYPOGRAPHY: RB (Arabic) — the approved Arabic family ------------------
@@ -2265,9 +2233,12 @@ a, a:visited { color: inherit; }
 
 /* --- legibility pass (measured): the 55% tint (#727272) is 4.11:1 on #EDEDED, which
        passes for large type but not for small labels — those use the 65% tint instead --- */
-.nav-link, .section-idx, .detail-label, .social-label, .work-badge, .work-client,
+.section-idx, .detail-label, .social-label,
 .service-num, .step-num, .stat-label, .card-caption, .mobile-contact-line,
 .form-group label, .footer-link, .footer-note, .scroll-hint { color: #595959; }
+/* header nav + the type directly under each work image read black; the work
+   description (`.work-desc`) stays grey (Alaa, 22 Sep 2026). */
+.nav-link, .work-badge, .work-client { color: #000000; }
 .form-container .form-group input::placeholder, .form-container .form-group textarea::placeholder,
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0, 0, 0, 0.45); }
 .title-outline { -webkit-text-stroke-color: rgba(0, 0, 0, 0.55); }
