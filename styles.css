@@ -2156,14 +2156,15 @@ html[dir="rtl"] .work-badge {
 }
 .contact-section[data-ground="light"] .form-err-msg { color: rgba(0, 0, 0, 0.75); }
 .contact-section[data-ground="light"] .btn-primary {
-  background-color: #000000;
+  background-color: #FFFFFF;
   border-color: #000000;
-  color: #ffffff;
+  color: #000000;
 }
 .contact-section[data-ground="light"] .btn-primary:hover {
-  background-color: rgba(0, 0, 0, 0.85);
-  border-color: rgba(0, 0, 0, 0.85);
-  color: #ffffff;
+  background-color: #FFFFFF;
+  border-color: #000000;
+  color: #000000;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
 }
 
 /* --- links inherit the brand ink, never the user-agent link colour ------- */
@@ -2460,13 +2461,6 @@ html[dir="rtl"] .why-card:hover { transform: translateX(-4px); }
   border-color: var(--border-dim);
   color: var(--text-pure);
 }
-.btn-primary:hover {
-  background-color: var(--text-pure);
-  border-color: var(--text-pure);
-  color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.20);
-}
 .btn-ghost:hover {
   background-color: transparent;
   border-color: var(--border-light);
@@ -2482,3 +2476,23 @@ html[dir="rtl"] .why-card:hover { transform: translateX(-4px); }
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
 }
 .partner-cell:hover { background-color: #EDEDED; }   /* the logo wall keeps its ground */
+
+/* ==========================================================================
+   BUTTONS: no black slabs. The primary action is a white button with a black
+   hairline and black type, so the page keeps a light, even surface; the ghost
+   variant keeps its transparent ground. Hierarchy comes from the border weight
+   (2px black vs 1px grey), not from a block of ink.
+   ========================================================================== */
+.btn-primary {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.btn-primary:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
