@@ -2098,17 +2098,6 @@ html[dir="rtl"] .work-badge {
   color: #000000;
   overflow: hidden;
 }
-.contact-section[data-ground="light"]::before {
-  content: "";
-  position: absolute;
-  inset: -25% -10%;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("assets/curve-pattern-dark.svg");
-  background-size: 120px 120px;
-  opacity: 0.06;
-  transform: rotate(45deg);
-}
 .contact-section[data-ground="light"] > .container { position: relative; z-index: 1; }
 
 .contact-section[data-ground="light"] .section-idx,
@@ -2215,7 +2204,9 @@ a, a:visited { color: inherit; }
 .hero-bg-img { filter: grayscale(1) contrast(1.06) brightness(1.04); }
 .site-footer { background-color: #E5E5E5; }
 .mobile-menu { background-color: rgba(237, 237, 237, 0.98); }
-.brand-band { background-color: #E5E5E5; background-image: url("assets/curve-pattern-dark.svg"); }
+/* the brand pattern band is gone — the page runs plain into the footer
+   (Alaa, 22 Sep 2026: "وحتى هون شيل الباترن"). */
+.brand-band { display: none; }
 .partner-cell { background-color: #EDEDED; }
 .partner-cell:hover { background-color: #E5E5E5; }
 /* white logo/partner art on a dark ground must read as black on the light ground */
@@ -2225,7 +2216,8 @@ a, a:visited { color: inherit; }
 .logo-img.logo-light { opacity: 1; }
 /* the contact section is no longer a special case — the whole site is light */
 .contact-section[data-ground="light"] { background-color: #EDEDED; }
-.contact-section[data-ground="light"]::before { opacity: 0.05; }
+/* the contact ground is plain: its pattern veil and pinwheel were removed
+   (Alaa, 22 Sep 2026: "شيل الباترن اللي بالخلفية هون خليها سادة"). */
 ::-webkit-scrollbar-track { background: #E5E5E5; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.28); }
 ::selection { background: #000000; color: #EDEDED; }
@@ -2280,13 +2272,7 @@ a, a:visited { color: inherit; }
   background: url("assets/svg/element-rotor.svg") center/contain no-repeat;
   opacity: 0.07;
 }
-/* contact: the pinwheel element behind the pattern veil */
-.contact-section::after {
-  content: ""; position: absolute; left: -6vw; top: 6vw;
-  width: 26vw; height: 26vw; z-index: 0; pointer-events: none;
-  background: url("assets/svg/element-pinwheel.svg") center/contain no-repeat;
-  opacity: 0.05;
-}
+/* contact: decoration removed — the ground is plain (see the light-theme block) */
 /* the arch element marks the profile/vision statement */
 .vision-marker, .card-statement::before {
   background-image: url("assets/svg/element-arch.svg");
@@ -2426,3 +2412,36 @@ a, a:visited { color: inherit; }
 }
 .stats-section .source-tag { color: #FFFFFF; background: rgba(255, 255, 255, 0.16); }
 .stats-section .source-text { color: rgba(255, 255, 255, 0.75); }
+
+/* ==========================================================================
+   BLACK NAV BAR — the top strip is solid black with white content
+   (Alaa, 22 Sep 2026: "والناف بار خليه اسود متل ما اتفقنا").
+   The header wordmark art is the black export, so it is inverted to white here;
+   every control inside the bar switches to white for the dark ground.
+   ========================================================================== */
+.site-header,
+.site-header.scrolled {
+  background-color: #000000;
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+.site-header .logo-img.logo-vector,
+.site-header .brand-logo img { filter: invert(1) grayscale(1); }   /* white wordmark on the black bar */
+.site-header .brand-location { color: rgba(255, 255, 255, 0.72); }
+.site-header .nav-link { color: #FFFFFF; }
+.site-header .nav-link:hover,
+.site-header .nav-link.active { color: #FFFFFF; }
+.site-header .nav-link::after { background-color: #FFFFFF; }
+.site-header .lang-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+}
+.site-header .lang-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+.site-header .lang-opt.active { color: #FFFFFF; }
+.site-header .nav-cta { border-color: rgba(255, 255, 255, 0.5); color: #FFFFFF; }
+.site-header .nav-cta:hover { background-color: #FFFFFF; border-color: #FFFFFF; color: #000000; }
+.site-header .hamburger-bar { background-color: #FFFFFF; }
