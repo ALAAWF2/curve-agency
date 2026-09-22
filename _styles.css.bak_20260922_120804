@@ -2268,56 +2268,5 @@ a, a:visited { color: inherit; }
 .nav-link, .section-idx, .detail-label, .social-label, .work-badge, .work-client,
 .service-num, .step-num, .stat-label, .hero-lead, .card-caption, .mobile-contact-line,
 .form-group label, .footer-link, .footer-note, .scroll-hint { color: #595959; }
-.form-container .form-group input::placeholder, .form-container .form-group textarea::placeholder,
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0, 0, 0, 0.45); }
 .title-outline { -webkit-text-stroke-color: rgba(0, 0, 0, 0.55); }
-
-
-/* ==========================================================================
-   OFFICIAL SVG ASSETS (Alaa's exports) — 22 Sep 2026
-   logo/logo-0٧.svg  -> the lockup (ink ratio 4.025)  -> header + footer, recoloured #000000
-   logo/logo-0٨.svg  -> the mark  (ink ratio 0.972)   -> favicon
-   PATTERN & ELEMENTS-01..06 -> the identity's geometric elements (arch, hook, pinwheel,
-   rotor, corner) + the pattern sampler; all used as black artwork on the light ground.
-   ========================================================================== */
-/* the vector logo already carries the approved ink — no inversion needed */
-.logo-vector, .logo-img.logo-vector, .footer-logo.logo-vector { filter: none; }
-.logo-img.logo-vector { width: 132px; height: auto; }
-.footer-logo.logo-vector { width: 130px; height: auto; }
-@media (max-width: 640px) {
-  .logo-img.logo-vector, .footer-logo.logo-vector { width: 124px; }   /* still >= the 120px minimum */
-}
-
-/* the official pattern sampler replaces the hand-made tile in the brand band */
-.brand-band {
-  position: relative; overflow: hidden;
-  background-color: #E5E5E5;
-  background-image: none;                    /* the official pattern rides on ::after */
-}
-.brand-band::after {
-  content: ""; position: absolute; inset: -6% 0;
-  background-image: url("assets/svg/pattern-tile.svg");   /* composed from the official elements */
-  background-size: clamp(96px, 9vw, 128px) auto;
-  background-repeat: repeat; background-position: center;
-  opacity: 0.5; pointer-events: none;
-}
-/* hero: the rotor element, cropped large and ghosted — the guideline's own element */
-.hero-section { position: relative; overflow: hidden; }
-.hero-section::after {
-  content: ""; position: absolute; right: -7vw; bottom: -12vw;
-  width: 40vw; height: 40vw; z-index: 1; pointer-events: none;
-  background: url("assets/svg/element-rotor.svg") center/contain no-repeat;
-  opacity: 0.07;
-}
-/* contact: the pinwheel element behind the pattern veil */
-.contact-section::after {
-  content: ""; position: absolute; left: -6vw; top: 6vw;
-  width: 26vw; height: 26vw; z-index: 0; pointer-events: none;
-  background: url("assets/svg/element-pinwheel.svg") center/contain no-repeat;
-  opacity: 0.05;
-}
-/* the arch element marks the profile/vision statement */
-.vision-marker, .card-statement::before {
-  background-image: url("assets/svg/element-arch.svg");
-  background-size: contain; background-repeat: no-repeat; background-position: center;
-}

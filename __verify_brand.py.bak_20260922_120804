@@ -187,16 +187,6 @@ def parse_img_attrs(tag: str) -> dict:
     return attrs
 
 
-def attr_px(value: str):
-    """HTML width/height attributes are unitless ('132' means 132px); CSS values need 'px'."""
-    if not value:
-        return None
-    m = re.fullmatch(r"\s*([0-9]+(?:\.[0-9]+)?)\s*(?:px)?\s*", value)
-    if m:
-        return float(m.group(1))
-    return px_value(value)
-
-
 def png_size(path: str):
     if Image is None or not os.path.isfile(path):
         return None
@@ -205,25 +195,6 @@ def png_size(path: str):
             return im.size
     except Exception:
         return None
-
-
-def svg_viewbox_size(path: str):
-    """Vector logos are measured from their viewBox (W, H) so the aspect check
-    works for the approved SVG assets exactly as it does for PNGs."""
-    if not os.path.isfile(path) or not path.lower().endswith(".svg"):
-        return None
-    try:
-        with open(path, "r", encoding="utf-8", errors="ignore") as fh:
-            txt = fh.read(4000)
-    except Exception:
-        return None
-    m = re.search(r'viewBox="\s*([-\d.]+)[ ,]+([-\d.]+)[ ,]+([-\d.]+)[ ,]+([-\d.]+)', txt)
-    if not m:
-        return None
-    w, h = float(m.group(3)), float(m.group(4))
-    if w <= 0 or h <= 0:
-        return None
-    return (w, h)
 
 
 # --------------------------------------------------------------------------- #
@@ -340,11 +311,11 @@ def check_logo(rep: Report, index_path: str, styles_path: str, root: str):
         src = attrs.get("src", "")
         classes = attrs.get("class", "").split()
         asset = os.path.join(root, src.replace("/", os.sep))
-        size = png_size(asset) or svg_viewbox_size(asset)
+        size = png_size(asset)
         real_ar = (size[0] / size[1]) if size else None
 
-        html_w = attr_px(attrs.get("width", ""))
-        html_h = attr_px(attrs.get("height", ""))
+        html_w = px_value(attrs.get("width", ""))
+        html_h = px_value(attrs.get("height", ""))
 
         # cascade-aware: later declarations of the same property win
         decls = []
@@ -379,20 +350,10 @@ def check_logo(rep: Report, index_path: str, styles_path: str, root: str):
                 css_notes.append("  (note) .%s { %s: %s } at styles.css:%d is overridden by "
                                  "%s at styles.css:%d"
                                  % (cls_i, prop, val_i, line_i, val, cline))
-        # every width ever declared for this tag: the HTML attribute plus every CSS rule,
-        # including overridden ones and media-query overrides. The guideline minimum must
-        # hold in the SMALLEST declaration too, otherwise a later rule can hide a violation.
-        all_widths = [v for v in (html_w,) if v is not None]
-        for prop in ("width", "min-width"):
-            for val_i, _l, _c in effective.get(prop, []):
-                pv = px_value(val_i)
-                if pv is not None:
-                    all_widths.append(pv)
-        declared_w = max(all_widths, default=None)
-        smallest_w = min(all_widths, default=None)
+        declared_w = max([v for v in (html_w, css_w, css_minw) if v is not None], default=None)
         findings.append("HTML:%d  <img src=\"%s\" class=\"%s\">" % (line, src, attrs.get("class", "")))
-        findings.append("   declared width ...... %s px   (guideline minimum %d px; smallest of %d declaration(s))"
-                        % ("%.0f" % declared_w if declared_w else "none", MIN_LOGO_WIDTH_PX, len(all_widths)))
+        findings.append("   declared width ...... %s px   (guideline minimum %d px)"
+                        % ("%.0f" % declared_w if declared_w else "none", MIN_LOGO_WIDTH_PX))
         if css_notes:
             findings.extend("   " + n for n in css_notes)
         if real_ar:
@@ -401,11 +362,9 @@ def check_logo(rep: Report, index_path: str, styles_path: str, root: str):
         else:
             findings.append("   asset aspect ratio ... UNREADABLE (%s)" % src)
 
-        if declared_w is None or smallest_w is None or smallest_w < MIN_LOGO_WIDTH_PX:
+        if declared_w is None or declared_w < MIN_LOGO_WIDTH_PX:
             ok = False
-            findings.append("   FAIL: declared width below %d px (smallest declaration: %s px)"
-                            % (MIN_LOGO_WIDTH_PX,
-                               "%.0f" % smallest_w if smallest_w is not None else "none"))
+            findings.append("   FAIL: declared width below %d px" % MIN_LOGO_WIDTH_PX)
 
         # --- hard-coded width/height pair vs the real asset ratio -----------
         pairs = []
@@ -438,13 +397,13 @@ def check_logo(rep: Report, index_path: str, styles_path: str, root: str):
             break
     if favicon:
         rel, href = favicon
-        is_mark = bool(re.match(r"^assets/(svg/)?curve-mark[\w.-]*\.(png|svg)$", href))
+        is_mark = bool(re.match(r"^assets/curve-mark[\w.-]*\.png$", href))
         if not is_mark:
             ok = False
         findings.append("favicon (rel=\"%s\") ... %s  -> %s"
                         % (rel, href or "(empty)",
                            "icon mark (correct)" if is_mark
-                           else "NOT an assets/curve-mark-*.png|svg — wordmark/full logo not allowed"))
+                           else "NOT an assets/curve-mark-*.png — wordmark/full logo not allowed"))
     else:
         ok = False
         findings.append("favicon ................ no <link rel=\"icon\"> found")

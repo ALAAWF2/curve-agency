@@ -9,8 +9,7 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/curve-mark-dark.png">
-    <link rel="icon" type="image/svg+xml" href="assets/svg/curve-mark-black.svg">
-  <link rel="apple-touch-icon" href="assets/curve-mark-dark.png">
+    <link rel="apple-touch-icon" href="assets/curve-mark-dark.png">
 
   <!-- Google Fonts: Syne + Plus Jakarta Sans + Tajawal + IBM Plex Sans Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +27,7 @@
   <header class="site-header" id="header">
     <div class="container header-inner">
       <a href="#hero" class="brand-logo" aria-label="CURVE Agency">
-        <img src="assets/svg/curve-logo-black.svg" alt="CURVE" class="logo-img logo-light logo-vector" width="132" height="33">
+        <img src="assets/curve-wordmark-white.png" alt="CURVE" class="logo-img logo-light" width="130" height="24">
         <span class="brand-location" data-i18n="nav_location">EST. JEDDAH</span>
       </a>
 
@@ -959,7 +958,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand-col">
-        <img src="assets/svg/curve-logo-black.svg" alt="CURVE" class="footer-logo logo-vector" width="130" height="32" loading="lazy">
+        <img src="assets/curve-wordmark-white.png" alt="CURVE" class="footer-logo" width="130" loading="lazy">
         <p class="footer-motto" data-i18n="footer_motto">Full-Service Creative Agency — Motion-Driven Solutions.</p>
       </div>
 
