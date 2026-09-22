@@ -2394,3 +2394,35 @@ a, a:visited { color: inherit; }
   .hero-bottom-grid { padding-top: 1rem; }
   .hero-lead { font-size: 1rem; line-height: 1.6; }
 }
+
+/* ==========================================================================
+   DARK BAND — MARKET MOMENTUM (#stats): the one inverted section.
+   Its ground is #030304 behind a dark photo overlay, so every line inside it
+   reads WHITE instead of the page's black/grey ink (Alaa, 22 Sep 2026:
+   "شوف كيف مظلم هالمكان خلي الخطوط بالابيض"). Scoped to .stats-section so the
+   light sections keep their black headings.
+   ========================================================================== */
+.stats-section .section-idx,
+.stats-section .section-idx.light { color: #FFFFFF !important; }
+.stats-section .section-headline,
+.stats-section .section-headline.light { color: #FFFFFF !important; }
+.stats-section .section-desc,
+.stats-section .section-desc.light { color: rgba(255, 255, 255, 0.75) !important; }
+
+.stats-section .stat-number-wrap,
+.stats-section .stat-number-wrap .stat-num { color: #FFFFFF; }
+.stats-section .stat-symbol { color: #FFFFFF; }
+.stats-section .stat-label { color: #FFFFFF; }
+.stats-section .stat-sublabel { color: rgba(255, 255, 255, 0.70); }
+
+.stats-section .stat-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+.stats-section .stat-card:hover { border-color: rgba(255, 255, 255, 0.50); }
+.stats-section .stats-source-bar {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+.stats-section .source-tag { color: #FFFFFF; background: rgba(255, 255, 255, 0.16); }
+.stats-section .source-text { color: rgba(255, 255, 255, 0.75); }
