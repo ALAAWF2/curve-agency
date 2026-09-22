@@ -487,7 +487,7 @@ html[dir="rtl"] .brand-location {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-top: clamp(8rem, 15vh, 12rem);
+  padding-top: clamp(7rem, 12vh, 9.5rem);
   padding-bottom: clamp(3rem, 6vh, 5rem);
   position: relative;
   overflow: hidden;
@@ -2385,4 +2385,41 @@ a, a:visited { color: inherit; }
 @media (max-width: 700px) {
   .section-idx { font-size: clamp(1.75rem, 8vw, 2.6rem) !important; }
   .section-headline, .section-headline.light { font-size: clamp(1.05rem, 5vw, 1.5rem) !important; }
+}
+
+
+/* ==========================================================================
+   HERO ARTWORK — Alaa's "IN MOTION" banner (paner/panner-0١.svg) replaces the typed
+   headline. The artwork ships with a flat #efefef ground and embedded rasters, so it is
+   rasterised at 2880x1620 and luminance-keyed to transparency (95.4% transparent) to sit
+   over the hero photograph; the h1 keeps the text for screen readers.
+   ========================================================================== */
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.hero-title-art {
+  display: block !important;
+  line-height: 0 !important;
+  margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+}
+.hero-art {
+  display: block;
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  filter: none;
+}
+@media (max-width: 700px) {
+  .hero-section {
+    min-height: auto;                       /* the 100vh floor was the empty space he flagged */
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    justify-content: flex-start;
+  }
+  /* let the artwork use the full width instead of the 10.1vw text margin */
+  .hero-art { max-width: none; width: calc(100% + 2.5rem); margin-left: -1.25rem; }
+  .hero-title-art { margin-bottom: 1.25rem; }
+  .hero-bottom-grid { padding-top: 1rem; }
+  .hero-lead { font-size: 1rem; line-height: 1.6; }
 }
