@@ -684,7 +684,7 @@ html[dir="rtl"] .brand-location {
 
 .about-body-text {
   font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  color: var(--text-primary);
+  color: var(--text-muted);      /* body copy under a heading = the 55% grey, like ABOUT CURVE */
   line-height: 1.75;
   font-weight: 400;
 }
@@ -1964,7 +1964,7 @@ html[dir="rtl"] .work-badge {
 .service-card.featured-service .service-title,
 .service-card.featured-service .service-num { color: #000000; }
 .service-card.featured-service .service-sub { color: rgba(0, 0, 0, 0.66); }
-.service-card.featured-service .service-body { color: rgba(0, 0, 0, 0.68); }
+.service-card.featured-service .service-body { color: var(--text-muted); }   /* same grey as every other card */
 .service-card.featured-service .service-items { border-top-color: rgba(0, 0, 0, 0.15); }
 .service-card.featured-service .service-items li { color: rgba(0, 0, 0, 0.70); }
 .service-card.featured-service .service-items li::before { color: #000000; }
@@ -2266,7 +2266,7 @@ a, a:visited { color: inherit; }
 /* --- legibility pass (measured): the 55% tint (#727272) is 4.11:1 on #EDEDED, which
        passes for large type but not for small labels — those use the 65% tint instead --- */
 .nav-link, .section-idx, .detail-label, .social-label, .work-badge, .work-client,
-.service-num, .step-num, .stat-label, .hero-lead, .card-caption, .mobile-contact-line,
+.service-num, .step-num, .stat-label, .card-caption, .mobile-contact-line,
 .form-group label, .footer-link, .footer-note, .scroll-hint { color: #595959; }
 .form-container .form-group input::placeholder, .form-container .form-group textarea::placeholder,
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0, 0, 0, 0.45); }
@@ -2321,3 +2321,31 @@ a, a:visited { color: inherit; }
   background-image: url("assets/svg/element-arch.svg");
   background-size: contain; background-repeat: no-repeat; background-position: center;
 }
+
+
+/* ==========================================================================
+   HEADER, read out of Alaa's own nav-strip exports (paner/panner-0١-0٢.svg and
+   paner/panner-0٢.svg, 1920x112) — measured from the rendered strip:
+     bar height 112/1920 = 5.83% of viewport width   -> 84px at 1440
+     logo/left cluster starts at x=66  = 3.44% inset
+     CTA button ends at x=1862         = 3.0% inset
+     gap between nav items = 78px      = 4.06% of width
+   So the header is near full-bleed while the page content keeps its 10.1vw margin,
+   exactly like the ABOUT CURVE composition in the same asset set (text inset ~13%).
+   ========================================================================== */
+.site-header { padding: 1.38rem 0; }
+.site-header .container.header-inner {
+  padding-left: 3.4vw;
+  padding-right: 3vw;
+}
+.site-header .nav-links { gap: clamp(1.6rem, 4vw, 4.2rem); }
+@media (max-width: 900px) {
+  .site-header .container.header-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+
+/* the COMPANY PROFILE card closes the portfolio as a deliberate wide feature
+   (13 cards in a 2-column grid would otherwise leave an orphan slot) */
+.work-card[data-index="13"] { grid-column: 1 / -1; }
+.work-card[data-index="13"] .work-visual { aspect-ratio: 21 / 9; max-height: 420px; }
+.work-card[data-index="13"] .work-img { object-fit: cover; object-position: left center; }
