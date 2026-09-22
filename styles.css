@@ -2300,13 +2300,6 @@ a, a:visited { color: inherit; }
 }
 
 
-/* the COMPANY PROFILE card closes the portfolio as a deliberate wide feature
-   (13 cards in a 2-column grid would otherwise leave an orphan slot) */
-.work-card[data-index="13"] { grid-column: 1 / -1; }
-.work-card[data-index="13"] .work-visual { aspect-ratio: 21 / 9; max-height: 420px; }
-.work-card[data-index="13"] .work-img { object-fit: cover; object-position: left center; }
-
-
 /* ==========================================================================
    SECTION TITLES — measured from the "ABOUT CURVE" composition
    (paner/panner-0١-0٣.svg, rendered 1600x900):
