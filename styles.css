@@ -794,9 +794,12 @@ html[dir="rtl"] .brand-location {
 }
 
 .service-card:hover {
-  background-color: var(--bg-card);
-  border-color: var(--border-hover);
+  /* emphasis by inversion + lift — never by darkening the ground
+     (Alaa, 22 Sep 2026: "مابدي لما مرر الماوس ع شي وحدة يصيرو اغمق"). */
+  background-color: #FFFFFF;
+  border-color: #000000;
   transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
 }
 
 /* all six capability cards are identical — no card is singled out
