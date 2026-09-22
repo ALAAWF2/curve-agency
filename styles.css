@@ -7,25 +7,25 @@
 :root {
   /* Colors — CURVE BRAND GUIDELINE: black #000000 + white + black/white opacity tints only.
      No chromatic accent is approved anywhere in the visual identity. */
-  --bg-dark: #000000;
-  --bg-surface: rgba(255, 255, 255, 0.04);
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-card-hover: rgba(255, 255, 255, 0.085);
-  --border-dim: rgba(255, 255, 255, 0.10);
-  --border-light: rgba(255, 255, 255, 0.20);
-  --border-hover: rgba(255, 255, 255, 0.45);
+  --bg-dark: #EDEDED;            /* approved light ground */
+  --bg-surface: rgba(0, 0, 0, 0.02);
+  --bg-card: rgba(0, 0, 0, 0.72);
+  --bg-card-hover: #E5E5E5;
+  --border-dim: rgba(0, 0, 0, 0.12);
+  --border-light: rgba(0, 0, 0, 0.22);
+  --border-hover: rgba(0, 0, 0, 0.55);
 
-  --paper: #eceaea;            /* approved light ground */
+  --paper: #EDEDED;            /* aligned with the mockup ground */            /* approved light ground */
   --ink: #000000;              /* approved ink */
-  --text-pure: #ffffff;
-  --text-primary: rgba(255, 255, 255, 0.90);
-  --text-muted: rgba(255, 255, 255, 0.55);
-  --text-dim: rgba(255, 255, 255, 0.32);
+  --text-pure: #000000;
+  --text-primary: #000000;
+  --text-muted: #727272;    /* guideline 55% tint */
+  --text-dim: #727272;
 
   /* the "accent" role is filled by pure black / pure white contrast — not a hue */
-  --accent: #ffffff;
-  --accent-glow: rgba(255, 255, 255, 0.14);
-  --accent-hover: rgba(255, 255, 255, 0.86);
+  --accent: #000000;
+  --accent-glow: rgba(0, 0, 0, 0.16);
+  --accent-hover: rgba(0, 0, 0, 0.86);
 
   /* Typography — guideline: Latin = Poppins (7 weights) · Arabic = RB family */
   --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -104,7 +104,7 @@ html[dir="rtl"] .btn-arrow {
   transform: translateX(-50%);
   width: 90vw;
   height: 60vh;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 75%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.02) 40%, transparent 75%);
   pointer-events: none;
   z-index: 0;
 }
@@ -286,7 +286,7 @@ html[dir="rtl"] .brand-location {
 
 /* Language Switcher */
 .lang-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.04);
   border: 1px solid var(--border-dim);
   color: var(--text-muted);
   padding: 0.35rem 0.75rem;
@@ -301,7 +301,7 @@ html[dir="rtl"] .brand-location {
 }
 
 .lang-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.12);
   border-color: var(--border-light);
   color: var(--text-pure);
 }
@@ -364,7 +364,7 @@ html[dir="rtl"] .brand-location {
 }
 
 .btn-ghost:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.05);
   border-color: var(--text-pure);
 }
 
@@ -377,7 +377,7 @@ html[dir="rtl"] .brand-location {
 .btn-outline:hover {
   border-color: var(--border-hover);
   color: var(--text-pure);
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .btn-block {
@@ -534,7 +534,7 @@ html[dir="rtl"] .brand-location {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border-dim);
   padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
@@ -575,7 +575,7 @@ html[dir="rtl"] .brand-location {
 }
 
 .title-outline {
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.65);
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.72);
   color: transparent;
   transition: -webkit-text-stroke var(--transition-fast);
 }
@@ -830,12 +830,12 @@ html[dir="rtl"] .brand-location {
   text-transform: uppercase;
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.04);
   color: var(--text-muted);
 }
 
 .service-tag-badge.highlight {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.16);
   color: var(--accent);
 }
 
@@ -921,7 +921,7 @@ html[dir="rtl"] .brand-location {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.04);
   border: 1px solid var(--border-dim);
   display: flex;
   align-items: center;
@@ -1032,7 +1032,7 @@ html[dir="rtl"] .why-card:hover {
   height: 52px;
   flex-shrink: 0;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border-dim);
   display: flex;
   align-items: center;
@@ -1042,7 +1042,7 @@ html[dir="rtl"] .why-card:hover {
 }
 
 .why-card:hover .why-card-icon {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.16);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -1134,7 +1134,7 @@ html[dir="rtl"] .why-card:hover {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border-dim);
   border-radius: var(--radius-md);
   padding: clamp(1.75rem, 3vw, 2.75rem) 1.5rem;
@@ -1182,7 +1182,7 @@ html[dir="rtl"] .why-card:hover {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border-dim);
   border-radius: var(--radius-full);
   max-width: 620px;
@@ -1196,7 +1196,7 @@ html[dir="rtl"] .why-card:hover {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.12);
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
   white-space: nowrap;
@@ -1297,7 +1297,7 @@ html[dir="rtl"] .why-card:hover {
   top: 1rem;
   right: 1rem;
   background: rgba(0, 0, 0, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.14);
   color: var(--text-pure);
   font-size: 0.65rem;
   font-weight: 700;
@@ -1602,7 +1602,7 @@ html[dir="rtl"] .work-badge {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border-dim);
   border-radius: var(--radius-sm);
   padding: 0.9rem 1.1rem;
@@ -1617,7 +1617,7 @@ html[dir="rtl"] .work-badge {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--border-hover);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .form-group select {
@@ -1659,8 +1659,8 @@ html[dir="rtl"] .work-badge {
 
 .form-status-box.success {
   display: block;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.30);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.30);
   color: #ffffff;
 }
 
@@ -2227,3 +2227,46 @@ a, a:visited { color: inherit; }
 @media (min-width: 900px) {
   .work-grid > .work-card:nth-child(even) { margin-top: clamp(0.75rem, 1vw, 1.25rem); }  /* reference: 18px */
 }
+
+
+/* ==========================================================================
+   LIGHT THEME — 22 Sep 2026 · approved by Alaa ("هيك ممتاز")
+   Ground #EDEDED, black headings, #727272 secondary text — taken from the website
+   mockup on page 23 of CURVE BRAND GUIDELINE (1).pdf (measured: #EDEDED = 86% of
+   the mockup pixels, #727272 = its grey type, which is the guideline's 55% tint).
+   Everything stays grayscale: no chromatic value is introduced anywhere.
+   ========================================================================== */
+.site-header { background-color: transparent; }
+.site-header.scrolled {
+  background-color: rgba(237, 237, 237, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(237, 237, 237, 0.45) 0%, rgba(237, 237, 237, 0.86) 68%, #EDEDED 100%);
+}
+.hero-bg-img { filter: grayscale(1) contrast(1.06) brightness(1.04); }
+.site-footer { background-color: #E5E5E5; }
+.mobile-menu { background-color: rgba(237, 237, 237, 0.98); }
+.brand-band { background-color: #E5E5E5; background-image: url("assets/curve-pattern-dark.svg"); }
+.partner-cell { background-color: #EDEDED; }
+.partner-cell:hover { background-color: #E5E5E5; }
+/* white logo/partner art on a dark ground must read as black on the light ground */
+.logo-img, .footer-logo, .brand-logo img { filter: invert(1) grayscale(1); }
+.partner-cell img { filter: invert(1) grayscale(1) opacity(0.72); transition: opacity var(--transition-fast); }
+.partner-cell:hover img { opacity: 1; }
+.logo-img.logo-light { opacity: 1; }
+/* the contact section is no longer a special case — the whole site is light */
+.contact-section[data-ground="light"] { background-color: #EDEDED; }
+.contact-section[data-ground="light"]::before { opacity: 0.05; }
+::-webkit-scrollbar-track { background: #E5E5E5; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.28); }
+::selection { background: #000000; color: #EDEDED; }
+
+
+/* --- legibility pass (measured): the 55% tint (#727272) is 4.11:1 on #EDEDED, which
+       passes for large type but not for small labels — those use the 65% tint instead --- */
+.nav-link, .section-idx, .detail-label, .social-label, .work-badge, .work-client,
+.service-num, .step-num, .stat-label, .hero-lead, .card-caption, .mobile-contact-line,
+.form-group label, .footer-link, .footer-note, .scroll-hint { color: #595959; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0, 0, 0, 0.45); }
+.title-outline { -webkit-text-stroke-color: rgba(0, 0, 0, 0.55); }

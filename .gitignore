@@ -37,3 +37,13 @@ _font_test.html
 _guideline_fonts/
 reference_sifr_live/*.png
 _mock_contact.html
+
+# ملفات تصميم ثقيلة — تبقى محلياً ولا تُرفع للريبو العام
+COMPANY PROFILE/
+*.ai
+CURVE BRAND GUIDELINE*.pdf
+_g2/
+FONTS/
+*.psd
+*.indd
+*.tif
