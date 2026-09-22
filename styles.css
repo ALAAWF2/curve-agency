@@ -249,7 +249,7 @@ html[dir="rtl"] .brand-location {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: var(--text-pure);          /* header nav reads black (Alaa, 22 Sep 2026) */
+  color: var(--text-pure);          /* header nav reads black */
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
@@ -794,16 +794,14 @@ html[dir="rtl"] .brand-location {
 }
 
 .service-card:hover {
-  /* emphasis by inversion + lift — never by darkening the ground
-     (Alaa, 22 Sep 2026: "مابدي لما مرر الماوس ع شي وحدة يصيرو اغمق"). */
+  /* emphasis by inversion + lift — never by darkening the ground */
   background-color: #FFFFFF;
   border-color: #000000;
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* all six capability cards are identical — no card is singled out
-   (Alaa, 22 Sep 2026: "خلين كلن نفس اللون ماتميزلي وحدة"). */
+/* all six capability cards are identical — no card is singled out */
 
 .service-top {
   display: flex;
@@ -1956,7 +1954,7 @@ html[dir="rtl"] .work-badge {
 
 /* --- BRAND IMAGERY: achromatic, motion-led (guideline p.16) ---------------- */
 /* brand photography stays achromatic; the portfolio shows the client's own work
-   in full colour at all times — no hover dependency (Alaa, 22 Sep 2026). */
+   in full colour at all times — no hover dependency. */
 .hero-bg-img { filter: grayscale(1) contrast(1.1) brightness(0.9); }
 .about-img { filter: grayscale(1) contrast(1.05); }
 .stats-bg-img { filter: grayscale(1) contrast(1.2); }
@@ -2190,7 +2188,7 @@ a, a:visited { color: inherit; }
 
 
 /* ==========================================================================
-   LIGHT THEME — 22 Sep 2026 · approved by Alaa ("هيك ممتاز")
+   LIGHT THEME
    Ground #EDEDED, black headings, #727272 secondary text — taken from the website
    mockup on page 23 of CURVE BRAND GUIDELINE (1).pdf (measured: #EDEDED = 86% of
    the mockup pixels, #727272 = its grey type, which is the guideline's 55% tint).
@@ -2207,8 +2205,7 @@ a, a:visited { color: inherit; }
 .hero-bg-img { filter: grayscale(1) contrast(1.06) brightness(1.04); }
 .site-footer { background-color: #E5E5E5; }
 .mobile-menu { background-color: rgba(237, 237, 237, 0.98); }
-/* the brand pattern band is gone — the page runs plain into the footer
-   (Alaa, 22 Sep 2026: "وحتى هون شيل الباترن"). */
+/* the brand pattern band is gone — the page runs plain into the footer */
 .brand-band { display: none; }
 .partner-cell { background-color: #EDEDED; }
 .partner-cell:hover { background-color: #E5E5E5; }
@@ -2219,8 +2216,7 @@ a, a:visited { color: inherit; }
 .logo-img.logo-light { opacity: 1; }
 /* the contact section is no longer a special case — the whole site is light */
 .contact-section[data-ground="light"] { background-color: #EDEDED; }
-/* the contact ground is plain: its pattern veil and pinwheel were removed
-   (Alaa, 22 Sep 2026: "شيل الباترن اللي بالخلفية هون خليها سادة"). */
+/* the contact ground is plain: its pattern veil and pinwheel were removed */
 ::-webkit-scrollbar-track { background: #E5E5E5; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.28); }
 ::selection { background: #000000; color: #EDEDED; }
@@ -2232,7 +2228,7 @@ a, a:visited { color: inherit; }
 .service-num, .step-num, .stat-label, .card-caption, .mobile-contact-line,
 .form-group label, .footer-link, .footer-note, .scroll-hint { color: #595959; }
 /* header nav + the type directly under each work image read black; the work
-   description (`.work-desc`) stays grey (Alaa, 22 Sep 2026). */
+   description (`.work-desc`) stays grey. */
 .nav-link, .work-badge, .work-client { color: #000000; }
 .form-container .form-group input::placeholder, .form-container .form-group textarea::placeholder,
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0, 0, 0, 0.45); }
@@ -2240,7 +2236,7 @@ a, a:visited { color: inherit; }
 
 
 /* ==========================================================================
-   OFFICIAL SVG ASSETS (Alaa's exports) — 22 Sep 2026
+   OFFICIAL SVG ASSETS — 22 Sep 2026
    logo/logo-0٧.svg  -> the lockup (ink ratio 4.025)  -> header + footer, recoloured #000000
    logo/logo-0٨.svg  -> the mark  (ink ratio 0.972)   -> favicon
    PATTERN & ELEMENTS-01..06 -> the identity's geometric elements (arch, hook, pinwheel,
@@ -2284,7 +2280,7 @@ a, a:visited { color: inherit; }
 
 
 /* ==========================================================================
-   HEADER, read out of Alaa's own nav-strip exports (paner/panner-0١-0٢.svg and
+   HEADER, read out of the nav-strip exports (paner/panner-0١-0٢.svg and
    paner/panner-0٢.svg, 1920x112) — measured from the rendered strip:
      bar height 112/1920 = 5.83% of viewport width   -> 84px at 1440
      logo/left cluster starts at x=66  = 3.44% inset
@@ -2312,7 +2308,7 @@ a, a:visited { color: inherit; }
 
 
 /* ==========================================================================
-   SECTION TITLES — measured from Alaa's own "ABOUT CURVE" composition
+   SECTION TITLES — measured from the "ABOUT CURVE" composition
    (paner/panner-0١-0٣.svg, rendered 1600x900):
      "ABOUT CURVE"                              cap 54px = 3.38% of width · rgb(0,0,0)
      "WE SHAPE BRANDS THAT REFUSE TO STAND STILL." cap 38px = 2.38% of width · #727272
@@ -2349,7 +2345,7 @@ a, a:visited { color: inherit; }
 
 
 /* ==========================================================================
-   HERO ARTWORK — Alaa's "IN MOTION" banner (paner/panner-0١.svg) replaces the typed
+   HERO ARTWORK — the "IN MOTION" banner (paner/panner-0١.svg) replaces the typed
    headline. The artwork ships with a flat #efefef ground and embedded rasters, so it is
    rasterised at 2880x1620 and luminance-keyed to transparency (95.4% transparent) to sit
    over the hero photograph; the h1 keeps the text for screen readers.
@@ -2387,8 +2383,7 @@ a, a:visited { color: inherit; }
 /* ==========================================================================
    DARK BAND — MARKET MOMENTUM (#stats): the one inverted section.
    Its ground is #030304 behind a dark photo overlay, so every line inside it
-   reads WHITE instead of the page's black/grey ink (Alaa, 22 Sep 2026:
-   "شوف كيف مظلم هالمكان خلي الخطوط بالابيض"). Scoped to .stats-section so the
+   reads WHITE instead of the page's black/grey ink. Scoped to .stats-section so the
    light sections keep their black headings.
    ========================================================================== */
 .stats-section .section-idx,
@@ -2417,8 +2412,7 @@ a, a:visited { color: inherit; }
 .stats-section .source-text { color: rgba(255, 255, 255, 0.75); }
 
 /* ==========================================================================
-   BLACK NAV BAR — the top strip is solid black with white content
-   (Alaa, 22 Sep 2026: "والناف بار خليه اسود متل ما اتفقنا").
+   BLACK NAV BAR — the top strip is solid black with white content.
    The header wordmark art is the black export, so it is inverted to white here;
    every control inside the bar switches to white for the dark ground.
    ========================================================================== */
@@ -2451,7 +2445,6 @@ a, a:visited { color: inherit; }
 
 /* ==========================================================================
    HOVER LANGUAGE: movement only — never a colour or fill change.
-   Alaa, 22 Sep 2026: "مابدي هون يصير ابيض … مابدي يصير اللون غامق لما مرر الماوس".
    Hovering lifts the element and adds a soft shadow; every surface keeps its
    resting background, border and text colour, so nothing turns white and nothing
    darkens under the pointer.
